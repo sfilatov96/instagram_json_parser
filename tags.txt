@@ -1,0 +1,4 @@
+tele2
+beeline
+mts
+megafon
