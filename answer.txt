@@ -1,4 +1,4 @@
-171648 mts
-57113 beeline
-51202 tele2
-23733 megafon
+172066 mts
+57175 beeline
+51253 tele2
+23845 megafon

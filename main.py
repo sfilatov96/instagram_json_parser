@@ -10,14 +10,13 @@ from sys import argv
 
 def parser(hashtag):
     page = urllib.urlopen(("https://www.instagram.com/explore/tags/%s/" % (hashtag)))
-    soup = BeautifulSoup(page,"lxml")
+    soup = BeautifulSoup(page)
     scripts = soup.find_all("script")
     preparing_json = None
     for s in scripts:
         if s.string:
             if "window._sharedData" in s.string:
                 preparing_json = s.string
-
 
     preparing_json = preparing_json[:-1]
     preparing_json = preparing_json.replace("window._sharedData = ","")
@@ -37,7 +36,6 @@ record = open("answer.txt","w")
 
 tags = file.read()
 tags = tags.split("\n")
-tags = tags[:-1]
 
 tags = [parser(i) for i in tags ]
 
